@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <script>
+        const ipcRenderer = require('electron').ipcRenderer;
+        console.log(ipcRenderer.sendSync('synchronous-message', 'ping')); // prints "pong"
+        ipcRenderer.on('asynchronous-reply', function(event, arg) {
+            console.log(arg); // prints "pong"
+        });
+        ipcRenderer.send('asynchronous-message', 'ping');
+    </script>
+
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    Node <script>document.write(process.versions.node)</script>,<br>
+    Chrome <script>document.write(process.versions.chrome)</script>,<br>
+    Electron <script>document.write(process.versions.electron)</script>.<br>
+  </body>
+</html>

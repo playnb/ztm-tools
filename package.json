@@ -1,0 +1,19 @@
+{
+  "name": "ztm-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": ".\\node_modules\\.bin\\electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": ".\\node_modules\\.bin\\electron-builder",
+    "pack":".\\node_modules\\.bin\\asar pack ./ ./pack/app.asar --unpack-dir \"{node_modules,dist,build,pack}\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "asar": "^2.0.1",
+    "electron": "^7.0.0",
+    "electron-builder": "^21.2.0"
+  }
+}
